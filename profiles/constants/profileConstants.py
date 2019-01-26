@@ -1,0 +1,3 @@
+class Constants:
+    USER_INITIAL_BALANCE = 0
+    USER_INITIAL_WISHCOINS = 150

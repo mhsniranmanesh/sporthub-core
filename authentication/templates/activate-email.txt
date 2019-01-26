@@ -1,0 +1,7 @@
+{% autoescape off %}
+سلام
+.بسیار خوشحالیم که عضو خانواده ویش ورک شدید
+لطفا برای ادامه روی دکمه ی زیر کلیک کنید
+
+http://{{ domain }}/signup/verify-email/success/?u={{uid}}&t={{token}}
+{% endautoescape %}
