@@ -12,6 +12,7 @@ import uuid as uuid_lib
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 
+import sporthub_core
 from profiles.constants.profileConstants import Constants
 from profiles.utils.profilePictureUtils import random_string_generator
 from sporthub_core.celery import send_mail_async
@@ -79,9 +80,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return '%s' % (self.username)
 
-    # def clean(self):
-    #     super().clean()
-    #     self.email = self.__class__.objects.normalize_email(self.email)
+    def clean(self):
+        super().clean()
+        self.email = self.__class__.objects.normalize_email(self.email)
 
     def get_full_name(self):
         """
@@ -103,14 +104,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         htmly = get_template('activate-email.html')
         d = {
             'user': self,
-            'domain': 'wishwork.ir',
+            'domain': 'localhost',
             'uid': uid,
             'token': token,
         }
         text_content = plaintext.render(d)
         html_content = htmly.render(d)
         subject = 'تایید ایمیل'
-        from_email = 'mhsn.iranmanesh@gmail.com'
+        from_email = sporthub_core.settings.EMAIL_HOST_USER
         to = self.email
 
         send_mail_async.delay(subject=subject, from_email=from_email, to_email=to, text_content=text_content,
@@ -128,7 +129,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         text_content = plaintext.render(d)
         html_content = htmly.render(d)
         subject = 'بازیابی رمز عبور'
-        from_email = 'noreply@wishwork.ir'
+        from_email = sporthub_core.settings.EMAIL_HOST_USER
         to = self.email
 
         send_mail_async.delay(subject=subject, from_email=from_email, to_email=to, text_content=text_content,

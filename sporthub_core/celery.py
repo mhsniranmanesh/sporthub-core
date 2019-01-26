@@ -9,9 +9,9 @@ from django.core.mail import EmailMultiAlternatives, send_mail
 from kombu import Exchange, Queue
 
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wishworkcore.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sporthub_core.settings')
 
-app = Celery('wishworkcore')
+app = Celery('sporthub_core')
 
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
@@ -67,10 +67,3 @@ def send_mail_async(self, subject, from_email, to_email, text_content, html_cont
         msg.send()
     except Exception as exc:
         self.retry(exc=exc)
-
-
-@app.task()
-def backup_database():
-    pass
-    #os.system('pg_dump -h wishworkstage.ir -p 7799 wishworkcore > /home/moh3en_ir/backups/wish_work.back')
-
