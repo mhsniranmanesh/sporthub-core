@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from profiles.serializers import (
     CreateUserSerializer,
     UserUpdateInfosSerializer,
-    UserGetPublicInfosSerializer)
+    UserGetPublicInfosSerializer, UserGetInitialInfosSerializer)
 from profiles.models import User
 from rest_framework import status
 
@@ -68,4 +68,20 @@ class UserExistsView(APIView):
         else:
             return Response(data={'username': 'A user with that username already exists.'}, status=status.HTTP_200_OK)  # Otherwise, return True
 
+
+class UserGetInitialInfosView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, *args, **kwargs):
+        try:
+            username = request.user.username
+            try:
+                user = User.objects.get(username=username)  # retrieve the user using username
+                data = UserGetInitialInfosSerializer(user).data
+                return Response(data, status=status.HTTP_200_OK)
+            except User.DoesNotExist:
+                return Response(data={'username': 'User does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            print(e)
+            return Response(data={'message': 'Something went wrong'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

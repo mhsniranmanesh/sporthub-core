@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5123d5c-79c9-4f0c-90d9-6cec5ff36b0d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/authentication/templates/activate-email.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/authentication/templates/reset-password.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/templates/activate-email.html" afterPath="$PROJECT_DIR$/authentication/templates/activate-email.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/views/activationView.py" afterPath="$PROJECT_DIR$/authentication/views/activationView.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/templates/reset-password.html" afterPath="$PROJECT_DIR$/authentication/templates/reset-password.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/urls.py" afterPath="$PROJECT_DIR$/profiles/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/views/userViews.py" afterPath="$PROJECT_DIR$/profiles/views/userViews.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +23,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>on_dele</find>
-      <find>img</find>
       <find>uid</find>
+      <find>img</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -41,10 +39,8 @@
         <option value="$PROJECT_DIR$/sporthub_core/celery.py" />
         <option value="$PROJECT_DIR$/profiles/constants/profileConstants.py" />
         <option value="$PROJECT_DIR$/profiles/serializers/userSerializer.py" />
-        <option value="$PROJECT_DIR$/profiles/views/userViews.py" />
         <option value="$PROJECT_DIR$/authentication/models/passwordReset.py" />
         <option value="$PROJECT_DIR$/sporthub_core/urls.py" />
-        <option value="$PROJECT_DIR$/profiles/urls.py" />
         <option value="$PROJECT_DIR$/profiles/views/__init__.py" />
         <option value="$PROJECT_DIR$/sporthub_core/__init__.py" />
         <option value="$PROJECT_DIR$/profiles/models/user.py" />
@@ -52,6 +48,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/authentication/views/activationView.py" />
         <option value="$PROJECT_DIR$/authentication/templates/activate-email.html" />
+        <option value="$PROJECT_DIR$/profiles/views/userViews.py" />
+        <option value="$PROJECT_DIR$/profiles/urls.py" />
+        <option value="$PROJECT_DIR$/authentication/templates/reset-password.html" />
       </list>
     </option>
   </component>
@@ -92,30 +91,7 @@
             <path>
               <item name="sporthub_core" type="b2602c69:ProjectViewProjectNode" />
               <item name="sporthub_core" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sporthub_core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sporthub_core" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sporthub_core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sporthub_core" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sporthub_core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sporthub_core" type="462c0819:PsiDirectoryNode" />
-              <item name="profiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sporthub_core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sporthub_core" type="462c0819:PsiDirectoryNode" />
-              <item name="profiles" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -396,16 +372,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="88" lean-forward="false" selection-start-line="13" selection-start-column="88" selection-end-line="13" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sporthub_core/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -434,16 +400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/serializers/userSerializer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authentication/templates/activate-email.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -462,18 +418,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/views/userViews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="28" column="7" lean-forward="false" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authentication/views/activationView.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="27" column="69" lean-forward="false" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/views/userViews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="79" column="32" lean-forward="true" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/serializers/userSerializer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/templates/reset-password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="570" column="0" lean-forward="true" selection-start-line="570" selection-start-column="0" selection-end-line="570" selection-end-column="0" />
           <folding />
         </state>
       </provider>
