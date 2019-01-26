@@ -25,7 +25,7 @@ class EmailActivationView(APIView):
                     user.save()
                     token = create_token(user)
                     return Response(data={'username': user.username, 'token': token, 'first_name': user.first_name,
-                                          'last_name': user.last_name, 'is_freelancer': user.is_freelancer})
+                                          'last_name': user.last_name})
                 return Response(data={'message': 'Token Is Not Valid'}, status=status.HTTP_400_BAD_REQUEST)
             except:
                 return Response(data={'message': 'Something Went Wrong'}, status=status.HTTP_400_BAD_REQUEST)
