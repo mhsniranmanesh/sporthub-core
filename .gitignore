@@ -1,0 +1,27 @@
+# Base
+*.sqlite3
+.DS_Store
+.idea
+__pycache__
+node_modules
+
+# Migrations
+**/migrations/*
+!**/migrations/__init__.py
+
+*.log
+*.pot
+*.pyc
+*.sock
+local_settings.py
+media
+static/*
+*.bak
+
+# Celery
+celerybeat-schedule.db
+celerybeat-schedule
+*.celerybeat-schedule
+
+# Celerybeat
+*.pid

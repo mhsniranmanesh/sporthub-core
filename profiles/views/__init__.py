@@ -3,5 +3,4 @@ from .userViews import (
     UserExistsView,
     UserUpdateInfosView,
     UserGetPublicInfosView,
-    UserGetInitialInfosView
 )

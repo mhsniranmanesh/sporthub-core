@@ -70,6 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 REST_FRAMEWORK = {
@@ -87,7 +88,6 @@ REST_FRAMEWORK = {
         'anon': '60/minute',
         'user': '600/minute'
     },
-    'PAGE_SIZE': 10
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -153,48 +153,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
-    'handlers': {
-        'debug-file': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/debug.log'),
-            'formatter': 'verbose',
-            'maxBytes': 10485760,
-            'backupCount': 20,
-        },
-        'error-file': {
-            'level': 'ERROR',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/error.log'),
-            'formatter': 'verbose',
-            'maxBytes': 10485760,
-            'backupCount': 20,
-        },
-        'mail_admins': {
-            'level': 'CRITICAL',
-            'class': 'django.utils.log.AdminEmailHandler',
-            'formatter': 'verbose',
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['debug-file', 'error-file', 'mail_admins'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

@@ -17,6 +17,9 @@ from profiles.constants.profileConstants import Constants
 from profiles.utils.profilePictureUtils import random_string_generator
 from sporthub_core.celery import send_mail_async
 
+
+
+
 class User(AbstractBaseUser, PermissionsMixin):
     username_validator = UnicodeUsernameValidator()
 
@@ -114,8 +117,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         from_email = sporthub_core.settings.EMAIL_HOST_USER
         to = self.email
 
-        send_mail_async.delay(subject=subject, from_email=from_email, to_email=to, text_content=text_content,
-                              html_content=html_content)
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
+        # send_mail_async.delay(subject=subject, from_email=from_email, to_email=to, text_content=text_content,
+        #                       html_content=html_content)
 
     def send_passwordreset_email(self, uid, token):
         plaintext = get_template('reset-password.txt')
@@ -132,8 +139,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         from_email = sporthub_core.settings.EMAIL_HOST_USER
         to = self.email
 
-        send_mail_async.delay(subject=subject, from_email=from_email, to_email=to, text_content=text_content,
-                              html_content=html_content)
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
+        # send_mail_async.delay(subject=subject, from_email=from_email, to_email=to, text_content=text_content,
+        #                       html_content=html_content)
 
 
 @receiver(models.signals.post_delete, sender=User)
