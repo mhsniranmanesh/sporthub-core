@@ -12,14 +12,17 @@ from news.serializers import NewsGetRecentSerializer
 
 class NewsGetRecent(APIView):
     permission_classes = (AllowAny,)
-    def get(self):
+    def get(self, request):
         try:
             latest_news = News.objects.order_by('-date_created')[:10]  # retrieve the user using username
             if len(latest_news) == 0 :
                 return Response(data={'data': 'There is no recent news'}, status=status.HTTP_200_OK)
-            data = NewsGetRecentSerializer(latest_news).data
+            data = []
+            for news in latest_news:
+                data.append(NewsGetRecentSerializer(news).data)
             return Response(data={'data': data}, status=status.HTTP_200_OK)
-        except :
+        except Exception as e:
+            print(e)
             return Response(data={'error': 'something went wrong'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)  # Otherwise, return True
 
 
